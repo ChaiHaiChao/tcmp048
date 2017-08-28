@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+
+<struts>
+
+	<!-- 解决post提交中文乱码的问题 -->
+	<constant name="struts.i18n.encoding" value="UTF-8"></constant>
+	
+    <!-- <package name="hellodemo" namespace="/" extends="struts-default">
+    
+        <action name="hello" class="cn.itcast.action.HelloAction">
+            <result name="ok">/hello.jsp</result>
+        </action>
+    </package> -->
+    
+    <!-- 引入hello.xml文件 -->
+    <!-- <include file="cn/itcast/action/hello.xml"></include> -->
+
+
+	<!-- <package name="methoddemo" namespace="/" extends="struts-default">
+		<action name="addAction" class="cn.itcast.method.BookAction" method="add"></action>
+		<action name="updateAction" class="cn.itcast.method.BookAction" method="update"></action>
+	</package> -->
+	
+	<!-- 通配符方式访问 -->
+	<package name="methoddemo" extends="struts-default" namespace="/">
+		<action name="book_*" class="cn.itcast.method.BookAction" method="{1}"></action>
+	</package>
+</struts>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
